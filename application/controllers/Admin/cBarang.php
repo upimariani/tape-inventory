@@ -9,13 +9,15 @@ class cBarang extends CI_Controller
 		parent::__construct();
 		$this->load->model('mBarang');
 		$this->load->model('mKategori');
+		$this->load->model('mUser');
 	}
 
 	public function index()
 	{
 		$data = array(
 			'barang' => $this->mBarang->select(),
-			'kategori' => $this->mKategori->select()
+			'kategori' => $this->mKategori->select(),
+			'supplier' => $this->mUser->select()
 		);
 		$this->load->view('Admin/Layout/head');
 		$this->load->view('Admin/Layout/navbar');
@@ -43,6 +45,7 @@ class cBarang extends CI_Controller
 			$upload_data = $this->upload->data();
 			$data = array(
 				'id_kategori' => $this->input->post('kategori'),
+				'id_user' => $this->input->post('supplier'),
 				'nama_barang' => $this->input->post('nama'),
 				'deskripsi' => $this->input->post('deskripsi'),
 				'keterangan' => $this->input->post('keterangan'),
@@ -77,6 +80,7 @@ class cBarang extends CI_Controller
 			$upload_data =  $this->upload->data();
 			$data = array(
 				'id_kategori' => $this->input->post('kategori'),
+				'id_user' => $this->input->post('supplier'),
 				'nama_barang' => $this->input->post('nama'),
 				'deskripsi' => $this->input->post('deskripsi'),
 				'keterangan' => $this->input->post('keterangan'),
@@ -90,6 +94,7 @@ class cBarang extends CI_Controller
 		} //tanpa ganti gambar
 		$data = array(
 			'id_kategori' => $this->input->post('kategori'),
+			'id_user' => $this->input->post('supplier'),
 			'nama_barang' => $this->input->post('nama'),
 			'deskripsi' => $this->input->post('deskripsi'),
 			'keterangan' => $this->input->post('keterangan'),

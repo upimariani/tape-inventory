@@ -79,7 +79,7 @@
 								foreach ($barang_masuk as $key => $value) {
 									if ($value->stok_sisa != '0') {
 								?>
-										<option data-stok="<?= $value->sisa_stok ?>" value="<?= $value->id_bar_masuk ?>"><?= $value->nama_barang ?> | <?= $value->tgl_masuk ?></option>
+										<option data-stok="<?= $value->sisa_stok ?>" value="<?= $value->id_bar_masuk ?>"><?= $value->nama_barang ?> | <?= $value->tgl_pengajuan ?></option>
 								<?php
 									}
 								}
@@ -133,7 +133,7 @@
 									?>
 											<option data-stok="<?= $item->sisa_stok ?>" value="<?= $item->id_bar_masuk ?>" <?php if ($value->id_bar_masuk == $item->id_bar_masuk) {
 																																echo 'selected';
-																															} ?>><?= $item->nama_barang ?> | <?= $item->tgl_masuk ?></option>
+																															} ?>><?= $item->nama_barang ?> | <?= $item->tgl_pengajuan ?></option>
 									<?php
 										}
 									}

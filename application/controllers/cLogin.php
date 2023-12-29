@@ -28,8 +28,10 @@ class cLogin extends CI_Controller
 			$this->session->set_userdata($array);
 			if ($role == '1') {
 				redirect('Admin/cDashboard');
-			} else {
+			} else if ($role == '2') {
 				redirect('Pemilik/cDashboard');
+			} else if ($role == '3') {
+				redirect('Supplier/cDashboard');
 			}
 		}
 		$this->session->set_flashdata('error', 'Username dan Password Anda Salah!');

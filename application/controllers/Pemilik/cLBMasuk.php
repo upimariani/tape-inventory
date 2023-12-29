@@ -14,7 +14,7 @@ class cLBMasuk extends CI_Controller
 	public function index()
 	{
 		$data = array(
-			'barang_masuk' => $this->mBarangMasuk->select(),
+			'barang_masuk' => $this->mBarangMasuk->lap_barang_masuk(),
 			'barang' => $this->mBarang->select()
 		);
 		$this->load->view('Pemilik/Layout/head');
@@ -48,12 +48,12 @@ class cLBMasuk extends CI_Controller
 		$pdf->SetFont('Times', '', 9);
 		$no = 1;
 
-		$laporan = $this->db->query("SELECT * FROM `barang_masuk` JOIN barang ON barang.id_barang=barang_masuk.id_barang WHERE MONTH(tgl_masuk)='" . $bulan . "' AND YEAR(tgl_masuk)='" . $tahun . "'")->result();
+		$laporan = $this->db->query("SELECT * FROM `barang_masuk` JOIN barang ON barang.id_barang=barang_masuk.id_barang JOIN pengajuan ON pengajuan.id_pengajuan=barang_masuk.id_pengajuan WHERE MONTH(tgl_pengajuan)='" . $bulan . "' AND YEAR(tgl_pengajuan)='" . $tahun . "'")->result();
 		foreach ($laporan as $key => $value) {
 			$pdf->Cell(10, 7, $no++, 1, 0, 'C');
 			$pdf->Cell(45, 7, $value->nama_barang, 1, 0, 'C');
 			$pdf->Cell(35, 7, 'Rp. ' . number_format($value->harga), 1, 0, 'C');
-			$pdf->Cell(40, 7, $value->tgl_masuk, 1, 0, 'C');
+			$pdf->Cell(40, 7, $value->tgl_pengajuan, 1, 0, 'C');
 			$pdf->Cell(30, 7, $value->stok_masuk, 1, 0, 'C');
 			$pdf->Cell(30, 7, 'Rp.' . number_format($value->harga * $value->stok_masuk), 1, 1, 'C');
 		}

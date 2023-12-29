@@ -65,9 +65,13 @@
 												?>
 													<span class="badge badge-success">Admin</span>
 												<?php
-												} else {
+												} else if ($value->role == '2') {
 												?>
 													<span class="badge badge-danger">Pemilik</span>
+												<?php
+												} else {
+												?>
+													<span class="badge badge-warning">Supplier</span>
 												<?php
 												}
 												?>
@@ -120,6 +124,7 @@
 								<option value="">---Pilih Role User---</option>
 								<option value="1">Admin</option>
 								<option value="2">Pemilik</option>
+								<option value="3">Supplier</option>
 							</select>
 						</div>
 					</div>
@@ -168,6 +173,9 @@
 									<option value="2" <?php if ($value->role == '2') {
 															echo 'selected';
 														} ?>>Pemilik</option>
+									<option value="3" <?php if ($value->role == '3') {
+															echo 'selected';
+														} ?>>Supplier</option>
 								</select>
 							</div>
 						</div>

@@ -15,7 +15,7 @@ class cKeluar extends CI_Controller
 	{
 		$data = array(
 			'barang_keluar' => $this->mBarangKeluar->select(),
-			'barang_masuk' => $this->mBarangMasuk->select()
+			'barang_masuk' => $this->mBarangMasuk->barang_masuk()
 		);
 		$this->load->view('Admin/Layout/head');
 		$this->load->view('Admin/Layout/navbar');

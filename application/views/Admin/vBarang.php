@@ -78,6 +78,21 @@
 				<?php echo form_open_multipart('admin/cBarang/create'); ?>
 				<div class="modal-body">
 					<div class="form-group">
+						<label for="exampleInputUsername1">Supplier</label>
+						<select class="form-control" name="supplier" required>
+							<option value="">---Pilih Supplier---</option>
+							<?php
+							foreach ($supplier as $key => $a) {
+								if ($a->role == '3') {
+							?>
+									<option value="<?= $a->id_user ?>"><?= $a->nama_user ?></option>
+							<?php
+								}
+							}
+							?>
+						</select>
+					</div>
+					<div class="form-group">
 						<label for="exampleInputUsername1">Kategori</label>
 						<select class="form-control" name="kategori" required>
 							<option value="">---Pilih Kategori---</option>
@@ -139,6 +154,22 @@
 					</div>
 					<?php echo form_open_multipart('admin/cBarang/update/' . $value->id_barang); ?>
 					<div class="modal-body">
+						<div class="form-group">
+							<label for="exampleInputUsername1">Supplier</label>
+							<select class="form-control" name="kategori" required>
+								<option value="">---Pilih Supplier---</option>
+								<?php
+								foreach ($supplier as $key => $a) {
+								?>
+									<option value="<?= $a->id_supplier ?>" <?php if ($value->id_supplier == $a->id_supplier) {
+																				echo 'selected';
+																			} ?>><?= $a->nama_user ?></option>
+								<?php
+								}
+								?>
+
+							</select>
+						</div>
 						<div class="form-group">
 							<label for="exampleInputUsername1">Kategori</label>
 							<select class="form-control" name="kategori" required>

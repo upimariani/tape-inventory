@@ -6,7 +6,6 @@
 				<h3 class="mb-3">Laporan Barang Masuk</h3>
 				<form action="<?= base_url('Pemilik/cLBMasuk/cetak') ?>" method="POST">
 					<div class="row">
-
 						<div class="col-lg-6">
 							<div class="form-group">
 								<select class="form-control" name="bulan">
@@ -32,17 +31,12 @@
 									<option>---Pilih Tahun Ke- ---</option>
 									<option value="2022">2022</option>
 									<option value="2023">2023</option>
-
 								</select>
 							</div>
 						</div>
 						<div class="col-lg-12">
 							<button type="submit" class="btn btn-primary">Cetak Laporan</button>
 						</div>
-
-
-
-
 					</div>
 				</form>
 			</div>
@@ -80,7 +74,7 @@
 									?>
 										<tr>
 											<td><?= $value->nama_barang ?></td>
-											<td><?= $value->tgl_masuk ?></td>
+											<td><?= $value->tgl_pengajuan ?></td>
 											<td><?= $value->stok_masuk ?></td>
 
 										</tr>

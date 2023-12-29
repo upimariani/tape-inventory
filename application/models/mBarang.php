@@ -23,6 +23,15 @@ class mBarang extends CI_Model
 		$this->db->where('id_barang', $id);
 		$this->db->delete('barang');
 	}
+
+	//transaksi supplier
+	public function barang_supplier($id_supplier)
+	{
+		$this->db->select('*');
+		$this->db->from('barang');
+		$this->db->where('id_user', $id_supplier);
+		return $this->db->get()->result();
+	}
 }
 
 /* End of file mBarang.php */
