@@ -156,14 +156,14 @@
 					<div class="modal-body">
 						<div class="form-group">
 							<label for="exampleInputUsername1">Supplier</label>
-							<select class="form-control" name="kategori" required>
+							<select class="form-control" name="supplier" required>
 								<option value="">---Pilih Supplier---</option>
 								<?php
 								foreach ($supplier as $key => $a) {
 								?>
-									<option value="<?= $a->id_supplier ?>" <?php if ($value->id_supplier == $a->id_supplier) {
-																				echo 'selected';
-																			} ?>><?= $a->nama_user ?></option>
+									<option value="<?= $a->id_user ?>" <?php if ($value->id_user == $a->id_user) {
+																			echo 'selected';
+																		} ?>><?= $a->nama_user ?></option>
 								<?php
 								}
 								?>

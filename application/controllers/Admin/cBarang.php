@@ -61,7 +61,7 @@ class cBarang extends CI_Controller
 	public function update($id)
 	{
 		$config['upload_path']          = './asset/foto-produk';
-		$config['allowed_types']        = 'gif|jpg|png';
+		$config['allowed_types']        = 'gif|jpg|png|jpeg';
 		$config['max_size']             = 500000;
 
 		$this->load->library('upload', $config);
