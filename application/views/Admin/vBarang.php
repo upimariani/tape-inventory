@@ -49,7 +49,7 @@
 											<td><?= $value->stok ?></td>
 											<td class="text-center">
 												<button type="button" data-toggle="modal" data-target="#edit<?= $value->id_barang ?>" class="btn btn-warning btn-rounded">Update</button>
-												<a href="<?= base_url('Admin/cUser/delete/' . $value->id_barang) ?>" class="btn btn-danger btn-rounded">Delete</a>
+												<a href="<?= base_url('Admin/cBarang/delete/' . $value->id_barang) ?>" class="btn btn-danger btn-rounded">Delete</a>
 											</td>
 										</tr>
 									<?php
